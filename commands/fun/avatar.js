@@ -2,14 +2,14 @@ const { MessageEmbed } = require('discord.js');
 
 
 
-   module.exports={
+module.exports = {
     name: 'avatar',
     description: 'Gives the avatar of the mentioned person',
     category: 'info',
-   
-   run:async(client, message, args)=> {
+
+    run: async (client, message, args) => {
         const member = message.mentions.users.first();
-        if(!member){
+        if (!member) {
             message.reply('You need to mention a person to use this command.')
             return;
         }
