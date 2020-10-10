@@ -34,8 +34,8 @@ client.on("message", async message => {
   // else
   // command = client.commands.get(client.aliases.get(cmd));
 
-  if(command){
-    command.run(client , message , args);
+  if (command) {
+    command.run(client, message, args);
   }
 
 });
