@@ -20,7 +20,7 @@ module.exports={
             {name: '3) =images `A name of a image which you want to search`' , value: 'This command searches a mentioned topic image'},
             {name: '4) =memes' , value: 'This command will search top memes and displays random memes'},
             {name: '5) =poll `Poll question here`' , name: 'This command will create a simple yes or no poll'},
-            {name: '6) =clearmsg `number`', value: 'This will send the latency between the Bot and the user' },
+            {name: '6) =roll a dice / =roll dice', value: 'Rolls a dice and displays the rolled number' },
             {name: '7) =ytchannel' , value: 'This command will send you a yt channel of the creator of this bot'}
 
         )
