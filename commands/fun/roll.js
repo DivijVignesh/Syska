@@ -7,7 +7,7 @@ module.exports={
         if(!message.guild.member(user)) return ;
         if(args[0]=== 'dice' || args[1] === 'dice'){
             let roll = Math.floor(Math.random()*7);
-            if(roll=== 0) roll = 3;
+            if(roll=== 0) roll = 5;
             const embed= new MessageEmbed()
             .setColor('#0099ff')
             .setTitle('Rolled a Dice')
