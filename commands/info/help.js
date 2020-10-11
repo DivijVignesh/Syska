@@ -20,7 +20,7 @@ module.exports = {
                 { name: '3) =info', value: 'Provides you all the information about the bot' },
             )
             .setTimestamp()
-            .setFooter('Created by Divij Vignesh', 'https://cdn.discordapp.com/icons/654212537973211156/aefdb10c3803b6d4997bdfda65c9d94e.webp?size=2048');
+            .setFooter('Syska Bot', 'https://cdn.discordapp.com/icons/654212537973211156/aefdb10c3803b6d4997bdfda65c9d94e.webp?size=2048');
             const user = message.author;
             message.channel.send(exampleEmbed);
         //    client.users.cache.get(user.id).send(exampleEmbed)
