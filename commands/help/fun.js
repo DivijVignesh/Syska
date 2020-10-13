@@ -30,6 +30,6 @@ module.exports={
         client.users.cache.get(user.id).send(funembed)
         // .then(()=> message.delete())
         .catch(err=> console.log(err));
-
+        message.channel.send('An email has been send to you. \nIf you didnt recieve any message please allow dms in your settings  ')
     }
 }

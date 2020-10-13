@@ -31,7 +31,7 @@ client.on("message", async message => {
   // if(client.commands.has(cmd)){
   //   command = client.commands.get(cmd)
   // }
-  // else
+  // else     
   // command = client.commands.get(client.aliases.get(cmd));
 
   if (command) {
@@ -43,7 +43,7 @@ client.on('guildMemberAdd', async member => {
   require("./events/guild/memberAdd")(member)
 })
 
-//   client.on('guildMemberRemove', async (message) => {
-//     require("./events/guild/memberRemove")(message)
-//   })
+  client.on('guildMemberRemove', async (message) => {
+    require("./events/guild/memberRemove")(message)
+  })
 client.login(process.env.TOKEN);
