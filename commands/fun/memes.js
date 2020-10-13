@@ -10,7 +10,11 @@ module.exports={
 
        
     let reddit = [
-        "meme",
+        "memes",
+        "MemeEconomy",
+        "raimimemes",
+        "wholesomememes",
+        "okbuddyretard",
         "DankMemesFromSite19",
         "memesITA",
         "animememes",
