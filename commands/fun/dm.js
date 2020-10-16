@@ -13,6 +13,7 @@ module.exports = {
         for (var i = 1; i < a; i++) {
             dmmessage = dmmessage + args[i] + ' ';
         }
+        
         if (user) {
             const member = message.guild.member(user);
             if (member) {
