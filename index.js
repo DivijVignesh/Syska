@@ -40,6 +40,7 @@ client.on("message", async message => {
 
 });
 client.on('guildMemberAdd', async member => {
+  
   require("./events/guild/memberAdd")(member)
 })
 
