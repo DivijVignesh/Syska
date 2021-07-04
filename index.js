@@ -3,7 +3,6 @@ const fs = require("fs");
 const client = new Discord.Client({
   disableEveryone: true,
 });
-
 const config = require("./botconfig.json");
 const token = config.token;
 client.commands = new Discord.Collection();
@@ -15,14 +14,6 @@ client.on("ready", () => {
   client.user.setActivity(`on ${client.guilds.cache.size} servers`);
   console.log(`Ready to serve on ${client.guilds.cache.size} servers, for ${client.users.cache.size} users.`);
 });
-
-client.on('guildMemberAdd', async member => {
-  require("./events/guild/memberAdd.js")(member)
-})
-
-client.on('guildMemberRemove', async (message) => {
-  require("./events/guild/memberRemove.js")(message)
-})
 
 ["command", "event"].forEach(handler => {
   require(`./handlers/${handler}`)(client);
@@ -53,4 +44,12 @@ client.on("message", async message => {
   }
 
 });
+client.on('guildMemberAdd', async member => {
+  
+  require("./events/guild/memberAdd.js")(member)
+})
+
+  client.on('guildMemberRemove', async (message) => {
+    require("./events/guild/memberRemove.js")(message)
+  })
 client.login(process.env.TOKEN);
