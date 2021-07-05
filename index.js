@@ -18,6 +18,16 @@ client.on("ready", () => {
 ["command", "event"].forEach(handler => {
   require(`./handlers/${handler}`)(client);
 });
+
+client.on('guildMemberAdd',  async (member) => {
+  console.log("in guildd addd");
+  require("./events/guild/memberAdd.js")(member)
+})
+
+  client.on('guildMemberRemove', async (message) => {
+    console.add("in remove");
+    require("./events/guild/memberRemove.js")(message)
+  })
 client.on("message", async message => {
   if (message.author.bot) return;
   if (!message.guild) return;
@@ -44,12 +54,6 @@ client.on("message", async message => {
   }
 
 });
-client.on('guildMemberAdd', async member => {
-  
-  require("./events/guild/memberAdd.js")(member)
-})
-
-  client.on('guildMemberRemove', async (message) => {
-    require("./events/guild/memberRemove.js")(message)
-  })
 client.login(process.env.TOKEN);
+
+
