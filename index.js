@@ -10,24 +10,32 @@ client.aliases = new Discord.Collection();
 client.categories = fs.readdirSync("./commands/");
 client.prefix = config.prefix;
 
+
+//When bot is ready 
 client.on("ready", () => {
   client.user.setActivity(`on ${client.guilds.cache.size} servers`);
   console.log(`Ready to serve on ${client.guilds.cache.size} servers, for ${client.users.cache.size} users.`);
 });
 
+
+//Loading each command and event
 ["command", "event"].forEach(handler => {
   require(`./handlers/${handler}`)(client);
 });
 
+//if a new member in the guild has joined
 client.on('guildMemberAdd',  async (member) => {
   console.log("in guildd addd");
   require("./events/guild/memberAdd.js")(member)
 })
 
+//If a member was removed 
   client.on('guildMemberRemove', async (message) => {
     console.add("in remove");
     require("./events/guild/memberRemove.js")(message)
   })
+
+//For every message entered by any users is checked for commands
 client.on("message", async message => {
   if (message.author.bot) return;
   if (!message.guild) return;
