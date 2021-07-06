@@ -5,6 +5,7 @@ module.exports = {
 
     run: async(client , message, args)=> {
         message.channel.send('https://www.youtube.com/stupidcreativity');
+        
         // message.author.send('https://www.youtube.com/stupidcreativity');
         // message.delete();
     }
