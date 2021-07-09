@@ -20,8 +20,7 @@ module.exports = {
                         .setAuthor(msg)
                         
                        message.channel.send(exampleEmbed);
-                    //client.users.cache.get(user.id).send(`Message sent by ${send} \n ` + dmmessage);
-                    console.log('Added announcement');
+                    
                 } catch (err) {
                     message.reply('Error sending a Dm message');
                     console.log(err);
