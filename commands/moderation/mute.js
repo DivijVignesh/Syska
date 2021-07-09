@@ -1,3 +1,5 @@
+const { Collection } = require('discord.js');
+const guilds = new Collection();
 module.exports = {
     name: 'mute',
     category: "moderation",
@@ -9,7 +11,18 @@ module.exports = {
         let user = message.mentions.members.first();
         let role = message.guild.roles.cache.find(ro => ro.name === 'Muted');
         if (!role) {
-            message.reply('Create a role named `Muted` to mute members.')
+            message.guild.roles.create({
+                data: {
+                name: 'Muted',
+                color: 'BLUE',
+                deny: ['SEND_MESSAGES']
+            },
+        reason: 'Syska Bot: Created this role to mute people',
+        })
+        .then(console.log)
+        .catch(console.error);
+        role = message.guild.roles.cache.find(ro => ro.name === 'Muted');
+            message.reply('Created a role named `Muted` to mute members.');
         }
         if (!user)
             return message.reply('The member is not in the server');
