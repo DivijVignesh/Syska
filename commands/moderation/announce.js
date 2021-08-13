@@ -15,11 +15,13 @@ module.exports = {
             msg = msg+ args[i] + ' ';
         }
         try {
-                    const exampleEmbed = new MessageEmbed()
-                        .setColor('#0099ff')
-                        .setAuthor(msg)
+//                     const exampleEmbed = new MessageEmbed()
+//                         .setColor('#0099ff')
+//                         .setAuthor(msg)
                         
-                       message.channel.send(exampleEmbed);
+//                        message.channel.send(exampleEmbed);
+            message.channel.send(msg);
+           
                     
                 } catch (err) {
                     message.reply('Error sending a Dm message');
